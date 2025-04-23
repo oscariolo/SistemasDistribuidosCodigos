@@ -33,7 +33,7 @@ import queue
 #             counter += 1
 
 # counter = 0
-# lock = threading.RLock()
+# lock = threading.Lock()
 
 # threads = [threading.Thread(target=increment_counter, args=(_+1,)) for _ in range(5)]
 # [t.start() for t in threads]
