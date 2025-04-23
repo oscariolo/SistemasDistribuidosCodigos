@@ -14,14 +14,16 @@ public class ProducerRunnable implements Runnable {
                 }
             }
             // Dequeue an item from the queue    
-            System.out.println(Thread.currentThread().getName() + " is producing: " + "Queue size: " + Shared.queue.size());
             Shared.queue.add(10);
+            System.out.println(Thread.currentThread().getName() + " is producing: " + "Queue size: " + Shared.queue.size());
             Shared.queue.notifyAll();
-            try {
-                Thread.sleep(500); // Sleep for a short duration to simulate work
-            } catch (InterruptedException e) {
-                System.out.println("Thread was interrupted: " + e.getMessage());
-            }
+            
+          
+        }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            System.out.println("Thread was interrupted: " + e.getMessage());
         }
     }
     }

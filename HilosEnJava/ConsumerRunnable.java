@@ -15,17 +15,20 @@ public class ConsumerRunnable implements Runnable {
                     }
                     
                 }
-                // Dequeue an item from the queue   
-                System.out.println(Thread.currentThread().getName() + " is consuming: " + " Queue size: " + Shared.queue.size());
-            
+                
                 Shared.queue.remove();
+                System.out.println(Thread.currentThread().getName() + " is consuming: " + " Queue size: " + Shared.queue.size());
                 Shared.queue.notifyAll();
-                try {
-                    Thread.sleep(500); // Sleep for a short duration to simulate work
-                } catch (InterruptedException e) {
-                    System.out.println("Thread was interrupted: " + e.getMessage());
-                }
+               
+               
             }
+            try {
+                // Dequeue an item from the queue   
+               Thread.sleep(800); // Sleep for a short duration to simulate work
+               
+           } catch (InterruptedException e) {
+               System.out.println("Thread was interrupted: " + e.getMessage());
+           }
         }
         
     }

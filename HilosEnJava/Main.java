@@ -6,8 +6,8 @@ public class Main {
         //threadswithdifferentrunnables();
         //threadswithsamerunnable();
         //threadswithsharedobject();
-        //threadscommunication();
-        threadswithSemaphore();
+        threadscommunication();
+        //threadswithSemaphore();
     }
 
     public static void threadswithdifferentrunnables() {
@@ -84,7 +84,8 @@ public class Main {
         // Start the threads
         producerThread.start();
         consumerThread.start();
-        producerThread2.start();
+
+        //producerThread2.start();
 
        
     }
