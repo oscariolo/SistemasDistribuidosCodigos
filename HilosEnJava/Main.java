@@ -6,8 +6,9 @@ public class Main {
         //threadswithdifferentrunnables();
         //threadswithsamerunnable();
         //threadswithsharedobject();
-        threadscommunication();
         //threadswithSemaphore();
+        //threadscommunication();
+        //threadswithatomic();
     }
 
     public static void threadswithdifferentrunnables() {
@@ -107,9 +108,19 @@ public class Main {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        
 
+    }
 
+    public static void threadswithatomic() {
+        // Create two threads with the same shared object
+        ResourceModifier thread1 = new ResourceModifier("Thread 1");
+        ResourceModifier thread2 = new ResourceModifier("Thread 2");
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+
+       
     }
 
 }
