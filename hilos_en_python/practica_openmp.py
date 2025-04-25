@@ -1,0 +1,1 @@
+#el openmp son los amigos que hicimos en el camino
