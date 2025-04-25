@@ -8,7 +8,7 @@ public class Main {
         //threadswithsharedobject();
         //threadswithSemaphore();
         //threadscommunication();
-        //threadswithatomic();
+        threadswithatomic();
     }
 
     public static void threadswithdifferentrunnables() {
@@ -93,7 +93,7 @@ public class Main {
 
     public static void threadswithSemaphore() {
         // Create a semaphore with 1 permit
-        Semaphore semaphore = new Semaphore(2);
+        Semaphore semaphore = new Semaphore(1);
 
         // Create two threads with the same semaphore
         MyThread thread1 = new MyThread("Thread 1", semaphore);
