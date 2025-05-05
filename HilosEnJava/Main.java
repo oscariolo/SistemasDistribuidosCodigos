@@ -30,6 +30,8 @@ public class Main {
         } catch (InterruptedException e) {
             System.out.println("Main thread was interrupted: " + e.getMessage());
         }
+        System.out.println("Main thread finished.");
+        
     }
 
     public static void threadswithsamerunnable(){
@@ -79,7 +81,7 @@ public class Main {
 
         Thread producerThread = new Thread(producer, "Producer");
         Thread consumerThread = new Thread(consumer, "Consumer");
-        Thread producerThread2 = new Thread(producer2, "Producer2");
+        //Thread producerThread2 = new Thread(producer2, "Producer2");
 
 
         // Start the threads
@@ -93,7 +95,7 @@ public class Main {
 
     public static void threadswithSemaphore() {
         // Create a semaphore with 1 permit
-        Semaphore semaphore = new Semaphore(1);
+        Semaphore semaphore = new Semaphore(2);
 
         // Create two threads with the same semaphore
         MyThread thread1 = new MyThread("Thread 1", semaphore);
