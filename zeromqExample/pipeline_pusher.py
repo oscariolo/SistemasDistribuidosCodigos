@@ -1,12 +1,12 @@
-# producer_pipeline.py
 import zmq
 import time
 
 context = zmq.Context()
-socket = context.socket(zmq.PUSH)
-socket.bind("tcp://*:5557")
+sender = context.socket(zmq.PUSH)
+sender.bind("tcp://*:5557")
 
-for i in range(5):
-    socket.send_string(f"Tarea {i}")
-    print(f"Productor envió: Tarea {i}")
-    time.sleep(1)
+print("Enviando números para calcular factorial...\n")
+for i in range(1, 16):
+    sender.send_json({"id": i, "numero": i})
+    print(f"Productor: Tarea enviada (factorial de {i})")
+    time.sleep(0.2)
